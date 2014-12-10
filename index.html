@@ -15,18 +15,19 @@
 
   ga('create', 'UA-51790156-4', 'auto');
   ga('send', 'pageview');
+  $(document).ready(function() {
+   
+      $("a.ui-slider-handle").each(function() {
+          var text = $(this).text();
+          $(this).click(function(event) { // when someone clicks these links
+              _gaq.push(["_trackEvent", "Links", "Clicked", "", , false]); // create a custom event
+          });
+      });
+   
+  });
 
 </script>
-$(document).ready(function() {
- 
-    $("a.ui-slider-handle").each(function() {
-        var text = $(this).text();
-        $(this).click(function(event) { // when someone clicks these links
-            _gaq.push(["_trackEvent", "Links", "Clicked", "", , false]); // create a custom event
-        });
-    });
- 
-});
+
 <body>
 	
 	<div class="image_reveal">
