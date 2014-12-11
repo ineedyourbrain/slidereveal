@@ -19,7 +19,8 @@
         width: o.width,
         height: o.height
       });
-      $this.append('<form id="dynamic-slider-form"> </form>'); $(function() {
+      $this.append('<div class="sr_slider"></div>');
+      $(function() {
         $( ".sr_slider" ).slider({
           slide: function(event, ui){
             $this.find('.top_image').css("width", ui.value+"%" );
