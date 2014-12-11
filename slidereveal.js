@@ -53,7 +53,7 @@
     
   };
   $(document).ready(function() {
-      if(_gaq){co}
+      
       $("a.ui-slider-handle").each(function() {
         var href = $(this).attr("href");
           var target = $(this).attr("target");

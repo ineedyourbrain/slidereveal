@@ -8,14 +8,18 @@
 <script type="text/javascript" src="slidereveal.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
-<!-- <link rel="stylesheet" href="jquery.mobile.custom/jquery.mobile.custom.min.js">
- -->
+<link rel="stylesheet" href="jquery.mobile.custom/jquery.mobile.custom.min.js">
+
 <body>
 	
 	<div class="image_reveal">
 		<div class="top_image"><img src="images/MG_3490a.jpg"></div>
 		<div class="bottom_image"><img src="images/MG_3721.jpg"></div>
 	</div>
+	<form>
+	    <label for="slider-10">Slider:</label>
+	    <input type="range" name="slider-10" id="slider-10" min="0" max="10" step=".1" value="5">
+	</form>
 	
 	<script type="text/javascript">
 	$('.image_reveal').slidereveal({
