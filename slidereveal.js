@@ -19,8 +19,7 @@
         width: o.width,
         height: o.height
       });
-      $this.append('<div class="sr_slider"></div>');
-      $(function() {
+      $this.append('<form id="dynamic-slider-form"> </form>'); $(function() {
         $( ".sr_slider" ).slider({
           slide: function(event, ui){
             $this.find('.top_image').css("width", ui.value+"%" );
@@ -52,6 +51,23 @@
     start: "50"
     
   };
+  $(document).ready(function() {
+      if(_gaq){co}
+      $("a.ui-slider-handle").each(function() {
+        var href = $(this).attr("href");
+          var target = $(this).attr("target");
+          var text = $(this).text();
+          
+          $(this).click(function(event) { // when someone clicks these links
+              event.preventDefault(); // don't open the link yet
+              _gaq.push(['_trackEvent', 'slider', 'drag', 'Before and After']); // create a custom event
+              setTimeout(function() { // now wait 300 milliseconds...
+                  window.open(href,(!target?"_self":target)); // ...and open the link as usual
+              },300);
+          });
+      });
+   
+  });
 //
 // end of closure
 //
