@@ -19,7 +19,7 @@
         width: o.width,
         height: o.height
       });
-      $this.append('<form><input type="range" name="slider-10" class="sr_slider" min="0" max="100" step=".1" value="5"> </form>'); $(function() {
+      $this.append('<input type="range" class="test">'); $(function() {
         $( ".sr_slider" ).slider({
           slide: function(event, ui){
             $this.find('.top_image').css("width", ui.value+"%" );
@@ -52,7 +52,7 @@
     
   };
   $(document).ready(function() {
-      
+      $('input.test').val(10).change();
       $("a.ui-slider-handle").each(function() {
         var href = $(this).attr("href");
           var target = $(this).attr("target");
