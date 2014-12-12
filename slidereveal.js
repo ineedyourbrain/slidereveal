@@ -20,16 +20,18 @@
         height: o.height
       });
       $this.append('<input type="range" class="test">'); $(function() {
-        $( ".sr_slider" ).slider({
-          slide: function(event, ui){
-            $this.find('.top_image').css("width", ui.value+"%" );
-            console.log(ui.value)
-          },
-          min: 0,
-          max: 100,
-          value: o.start
+        
+        $('input.test').rangeslider({
+          rangeClass: 'rangeslider',
+          fillClass: 'rangeslider__fill',
+          handleClass: 'rangeslider__handle',
+          // Callback function
+          onSlide: function(position, value) {
+            $this.find('.top_image').css("width", value +"%" );
+          }
         });
       });
+
       $('head').append('<style>.image_reveal{overflow:hidden; position:relative} .image_reveal .bottom_image, .image_reveal .top_image {position:absolute; overflow:hidden} .image_reveal .top_image{z-index:1; width:'+ o.start +'%} .image_reveal .bottom_image{z-index:0} .image_reveal img{width:'+ o.width +'; height:auto} .image_reveal .sr_slider, .test{z-index:3; width:100%; position:absolute} </style>');
     });
   };
@@ -52,7 +54,7 @@
     
   };
   $(document).ready(function() {
-      $('input.test').val(10).change();
+      
       $("a.ui-slider-handle").each(function() {
         var href = $(this).attr("href");
           var target = $(this).attr("target");
