@@ -19,8 +19,7 @@
         width: o.width,
         height: o.height
       });
-      $this.append('<div class="sr_slider"></div>');
-      $(function() {
+      $this.append('<form><input type="range" name="slider-10" class="sr_slider" min="0" max="100" step=".1" value="5"> </form>'); $(function() {
         $( ".sr_slider" ).slider({
           slide: function(event, ui){
             $this.find('.top_image').css("width", ui.value+"%" );
@@ -31,7 +30,7 @@
           value: o.start
         });
       });
-      $('head').append('<style>.image_reveal{overflow:hidden; position:relative} .image_reveal .bottom_image, .image_reveal .top_image {position:absolute; overflow:hidden} .image_reveal .top_image{z-index:1; width:'+ o.start +'%} .image_reveal .bottom_image{z-index:0} .image_reveal img{width:'+ o.width +'; height:auto} .image_reveal .sr_slider{z-index:3} </style>');
+      $('head').append('<style>.image_reveal{overflow:hidden; position:relative} .image_reveal .bottom_image, .image_reveal .top_image {position:absolute; overflow:hidden} .image_reveal .top_image{z-index:1; width:'+ o.start +'%} .image_reveal .bottom_image{z-index:0} .image_reveal img{width:'+ o.width +'; height:auto} .image_reveal .sr_slider{z-index:3; width:100%} </style>');
     });
   };
   //
