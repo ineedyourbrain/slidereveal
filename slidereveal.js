@@ -30,7 +30,7 @@
           value: o.start
         });
       });
-      $('head').append('<style>.image_reveal{overflow:hidden; position:relative} .image_reveal .bottom_image, .image_reveal .top_image {position:absolute; overflow:hidden} .image_reveal .top_image{z-index:1; width:'+ o.start +'%} .image_reveal .bottom_image{z-index:0} .image_reveal img{width:'+ o.width +'; height:auto} .image_reveal .sr_slider{z-index:3; width:100%} </style>');
+      $('head').append('<style>.image_reveal{overflow:hidden; position:relative} .image_reveal .bottom_image, .image_reveal .top_image {position:absolute; overflow:hidden} .image_reveal .top_image{z-index:1; width:'+ o.start +'%} .image_reveal .bottom_image{z-index:0} .image_reveal img{width:'+ o.width +'; height:auto} .image_reveal .sr_slider, .test{z-index:3; width:100%} </style>');
     });
   };
   //
