@@ -20,14 +20,23 @@
         height: o.height
       });
       $this.append('<input type="range" class="test">'); $(function() {
-        
+        $( ".sr_slider" ).slider({
+          slide: function(event, ui){
+            $this.find('.top_image').css("width", ui.value+"%" );
+            console.log(ui.value)
+          },
+          min: 0,
+          max: 100,
+          value: o.start
+        });
         $('input.test').rangeslider({
           rangeClass: 'rangeslider',
           fillClass: 'rangeslider__fill',
           handleClass: 'rangeslider__handle',
           // Callback function
           onSlide: function(position, value) {
-            $this.find('.top_image').css("width", value +"%" );
+            console.log(value);
+            $this.find('.top_image').css("width", value+"%" );
           }
         });
       });
